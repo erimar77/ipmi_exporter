@@ -170,7 +170,7 @@ var (
 func pipeName() string {
 	randBytes := make([]byte, 16)
 	rand.Read(randBytes)
-	return filepath.Join(os.TempDir(), "ipmi_exporter-"+hex.EncodeToString(randBytes))
+	return filepath.Join("/opt", "ipmi_exporter-"+hex.EncodeToString(randBytes))
 }
 
 func freeipmiConfig(config IPMIConfig) string {
